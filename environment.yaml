@@ -1,4 +1,4 @@
-name: bioemu # 您可以修改为您希望的环境名称
+name: bioemu
 channels:
   - pytorch
   - nvidia/label/cuda-12.1.0
@@ -7,7 +7,6 @@ channels:
   - defaults 
 
 dependencies:
-  # Python 和 Pip
   - python=3.12.0
 
   - pytorch::pytorch=2.4.0

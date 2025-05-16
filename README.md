@@ -1,4 +1,3 @@
-
 <h1>
 <p align="center">
     <img src="assets/emu.png" alt="BioEmu logo" width="300"/>
@@ -28,6 +27,18 @@ bioemu is provided as a Linux-only pip-installable package:
 
 ```bash
 pip install bioemu
+```
+
+For Develop Mode and CUDA 12.1 compatibility, you can install using conda/mamba using our environment:
+
+```bash
+# First create the environment (recommend using miniforge)
+mamba env create -f environment.yaml
+# or alternatively
+conda env create -f environment.yaml
+
+# Then install in development mode
+pip install -e .
 ```
 
 > [!NOTE]
