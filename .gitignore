@@ -132,3 +132,7 @@ cython_debug/
 *.pth
 *.pt
 
+*ckpt
+src/bioemu/.bioemu_colabfold*
+test*
+

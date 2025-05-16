@@ -6,21 +6,23 @@ echo "Setting up colabfold..."
 BASE_PYTHON=$1
 VENV_FOLDER=$2
 
+export UV_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
+
 ${BASE_PYTHON} -m venv --without-pip ${VENV_FOLDER}
-${BASE_PYTHON} -m uv pip install --python ${VENV_FOLDER}/bin/python 'colabfold[alphafold-minus-jax]==1.5.4'
+${BASE_PYTHON} -m uv pip install --python ${VENV_FOLDER}/bin/python 'colabfold[alphafold-minus-jax]==1.5.4' 
 ${BASE_PYTHON} -m uv pip install --python ${VENV_FOLDER}/bin/python --force-reinstall \
     "jax[cuda12]==0.4.35" \
     "numpy==1.26.4" \
-    "nvidia-cublas-cu12==12.8.4.1" \
-    "nvidia-cuda-cupti-cu12==12.8.90" \
-    "nvidia-cuda-nvcc-cu12==12.8.93" \
-    "nvidia-cuda-runtime-cu12==12.8.90" \
-    "nvidia-cudnn-cu12==9.8.0.87" \
-    "nvidia-cufft-cu12==11.3.3.83" \
-    "nvidia-cusolver-cu12==11.7.3.90" \
-    "nvidia-cusparse-cu12==12.5.8.93" \
-    "nvidia-nccl-cu12==2.26.2.post1" \
-    "nvidia-nvjitlink-cu12==12.8.93"
+    "nvidia-cublas-cu12==12.1.*" \
+    "nvidia-cuda-cupti-cu12==12.1.*" \
+    "nvidia-cuda-nvcc-cu12==12.1.*" \
+    "nvidia-cuda-runtime-cu12==12.1.*" \
+    "nvidia-cusparse-cu12==12.1.*" \
+    "nvidia-nvjitlink-cu12==12.1.*" \
+    "nvidia-cudnn-cu12==9.3.*" \
+    "nvidia-nccl-cu12" \
+    "nvidia-cufft-cu12" \
+    "nvidia-cusolver-cu12"
 
 # Patch colabfold install
 echo "Patching colabfold installation..."
